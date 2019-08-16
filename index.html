@@ -152,6 +152,109 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-How-to-understand-struct-in-language-C" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/16/How-to-understand-struct-in-language-C/">How to understand &#39;struct&#39; in language C</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/16/How-to-understand-struct-in-language-C/" class="archive-article-date">
+  	<time datetime="2019-08-16T14:24:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="C语言中所有的结构体定义方法"><a href="#C语言中所有的结构体定义方法" class="headerlink" title="C语言中所有的结构体定义方法"></a>C语言中所有的结构体定义方法</h2><pre><code>~~写的原因：数据结构，严奶奶的书，最近找工作复习。。发现里面的结构体定义看不太懂，因为**C++的结构体太好用了**！~~
+1. 第一种定义方法是先定义结构体再定义变量名
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">struct student&#123;</span><br><span class="line">	int sno;</span><br><span class="line">	char name[50];</span><br><span class="line">	int score;</span><br><span class="line">&#125;;</span><br><span class="line">//main函数中的使用,C语言中一般还是必须的加入struct的</span><br><span class="line">struct student mea;</span><br></pre></td></tr></table></figure>
+
+2. 第二种方法就是在定义结构体的时候就把变量名给定义了
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">	struct student&#123;</span><br><span class="line">	int sno;</span><br><span class="line">	char name[50];</span><br><span class="line">	int score;</span><br><span class="line">&#125;mea;</span><br><span class="line">这时候mea就作为一个变量就可以用了，神奇！</span><br></pre></td></tr></table></figure>
+
+3. 第三种方法就是直接定义变量名，而不要结构体的名字，但是一般人绝对不会这么搞得吧。。。
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">struct&#123;</span><br><span class="line">   int sno;</span><br><span class="line">   char name[50];</span><br><span class="line">   int score;</span><br><span class="line">&#125;mea;</span><br></pre></td></tr></table></figure>
+
+4. 第四种就是数据结构这本书上最常出现的情况了
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">typedef struct student&#123;</span><br><span class="line">	int sno;</span><br><span class="line">	char name[50];</span><br><span class="line">	int score;</span><br><span class="line">&#125;Mea,Aqua;</span><br><span class="line">//main函数中有三种定义方式</span><br><span class="line">Mea mea;</span><br><span class="line">Aqua mea;</span><br><span class="line">struct student mea;</span><br></pre></td></tr></table></figure>
+
+你要是把这个玩意横过来 其实就对应了typedef的使用方法了只是因为有花括号所以不需要空格了。</code></pre><hr>
+<h2 id="结构体的初始化。对应相应的类型"><a href="#结构体的初始化。对应相应的类型" class="headerlink" title="结构体的初始化。对应相应的类型"></a>结构体的初始化。对应相应的类型</h2><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">struct student&#123;</span><br><span class="line">	int sno;</span><br><span class="line">	char name[50];</span><br><span class="line">	int score;</span><br><span class="line">&#125;;</span><br><span class="line">int main()&#123;</span><br><span class="line">	struct student mea = &#123;101,&quot;mea_suki&quot;,95&#125;;</span><br><span class="line">	printf(&quot;%d %s,%d&quot;,mea.sno,mea.name,mea.score);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre><hr>
+<h2 id="结构体变量定应用："><a href="#结构体变量定应用：" class="headerlink" title="结构体变量定应用："></a>结构体变量定应用：</h2><pre><code>结构体中的成员可以像普通的变量那样单独的使用，如下面例子中，结构体变量A中的成员num，可以使用A.num</code></pre><hr>
+<h2 id="关于结构体的一点说明"><a href="#关于结构体的一点说明" class="headerlink" title="关于结构体的一点说明"></a>关于结构体的一点说明</h2><pre><code>1. 不能把结构体当成一个整体进行操作
+printf(&quot;%d,%s ,%d&quot;,mea);//对应上了？没听说过。。。
+scanf(&quot;%d, %s %d&quot;,&amp;mea);//也不行
+printf(&quot;%d, %s %d&quot;,mea.sno,mea.name,mea.score);//可以使用
+scanf(&quot;%d, %s %d&quot;,&amp;mea.sno,&amp;mea.name,&amp;mea.score);//可以使用
+
+2. 当结构域体变量的成员也是结构体类型时，引用必须用最底层的变量：如下
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">struct Age&#123;</span><br><span class="line">	int year;</span><br><span class="line">	int month;</span><br><span class="line">	int day;</span><br><span class="line">&#125;;</span><br><span class="line">struct student&#123;</span><br><span class="line">	int sno;</span><br><span class="line">	int score;</span><br><span class="line">	struct Age age;</span><br><span class="line">&#125;;</span><br><span class="line">int main()&#123;</span><br><span class="line">	struct student mea;</span><br><span class="line">	scanf(&quot;%d&quot;,&amp;mea.age.day);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+3. 程序中的变量名和成员名相同，二者代表不同对象
+4. 可以引用结构体变量成员地址，也可以引用结构体变量的地址
+scanf(&quot;%d&quot;,&amp;mea.sno)//输入A的num值
+printf(&quot;%d&quot;，&amp;mea)//输出mea的首地址
+5. 相同类型的变量可以相互赋值，其他情况不允许直接赋值
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">struct student mea;</span><br><span class="line">struct student auqa;</span><br><span class="line">mea = auqa;</span><br></pre></td></tr></table></figure></code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">C语言;</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/16/How-to-understand-struct-in-language-C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-How-to-find-a-job-what-s-the-most-important" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -351,6 +454,95 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/12/what-s-difference-between-big-and-small-firm-How-to-choose-a-good-one/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-如何搭建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/12/如何搭建个人博客/">如何搭建个人博客</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/12/如何搭建个人博客/" class="archive-article-date">
+  	<time datetime="2019-08-12T06:22:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、如何总结？"><a href="#1、如何总结？" class="headerlink" title="1、如何总结？"></a>1、如何总结？</h2><h2 id="多写博客"><a href="#多写博客" class="headerlink" title="多写博客"></a>多写博客</h2><h2 id="写博客的好处？"><a href="#写博客的好处？" class="headerlink" title="写博客的好处？"></a>写博客的好处？</h2><ul>
+<li>第一个是对于前一阶段的整合</li>
+<li>加深对于知识点的理解</li>
+<li>让自己有一个自己的知识清单</li>
+<li>个人博客是自己踩过的坑</li>
+<li>获得阅读量 得到认可，获取知名度</li>
+<li>通过技术博客进行技术交流</li>
+<li>提高自己的写作水平</li>
+</ul>
+<hr>
+<h2 id="初学者写技术博客没有技术含量怎么办？"><a href="#初学者写技术博客没有技术含量怎么办？" class="headerlink" title="初学者写技术博客没有技术含量怎么办？"></a>初学者写技术博客没有技术含量怎么办？</h2><p>不用担心，这不是初学者要担心的问题、</p>
+<h2 id="初学者担心被喷怎么办"><a href="#初学者担心被喷怎么办" class="headerlink" title="初学者担心被喷怎么办?"></a>初学者担心被喷怎么办?</h2><p>不要担心</p>
+<hr>
+<h2 id="如何写博客"><a href="#如何写博客" class="headerlink" title="如何写博客"></a>如何写博客</h2><p>建议大家用markdown </p>
+<h2 id="技术文档都是支持markdown的"><a href="#技术文档都是支持markdown的" class="headerlink" title="技术文档都是支持markdown的"></a>技术文档都是支持markdown的</h2><h2 id="入门写作"><a href="#入门写作" class="headerlink" title="入门写作"></a>入门写作</h2><p>备忘录<br>笔记<br>基础理解<br>采坑记录</p>
+<h2 id="实战类的文章"><a href="#实战类的文章" class="headerlink" title="实战类的文章"></a>实战类的文章</h2><p>环境搭建<br>操作记录</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/12/如何搭建个人博客/">展开全文 >></a>
         </p>
       
 
@@ -837,6 +1029,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">C语言;</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
             
             <div class="clearfix"></div>

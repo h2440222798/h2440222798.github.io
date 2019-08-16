@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 开发 | Hexo</title>
+  <title>How to understand &#39;struct&#39; in language C | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/tags/开发/index.html">
+  <meta name="description" content="C语言中所有的结构体定义方法~~写的原因：数据结构，严奶奶的书，最近找工作复习。。发现里面的结构体定义看不太懂，因为**C++的结构体太好用了**！~~ 1. 第一种定义方法是先定义结构体再定义变量名 1234567struct student&amp;#123;	int sno;	char name[50];	int score;&amp;#125;;//main函数中的使用,C语言中一般还是必须的加入stru">
+<meta name="keywords" content="C语言;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to understand &#39;struct&#39; in language C">
+<meta property="og:url" content="http://yoursite.com/2019/08/16/How-to-understand-struct-in-language-C/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="C语言中所有的结构体定义方法~~写的原因：数据结构，严奶奶的书，最近找工作复习。。发现里面的结构体定义看不太懂，因为**C++的结构体太好用了**！~~ 1. 第一种定义方法是先定义结构体再定义变量名 1234567struct student&amp;#123;	int sno;	char name[50];	int score;&amp;#125;;//main函数中的使用,C语言中一般还是必须的加入stru">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-16T14:59:52.386Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="How to understand &#39;struct&#39; in language C">
+<meta name="twitter:description" content="C语言中所有的结构体定义方法~~写的原因：数据结构，严奶奶的书，最近找工作复习。。发现里面的结构体定义看不太懂，因为**C++的结构体太好用了**！~~ 1. 第一种定义方法是先定义结构体再定义变量名 1234567struct student&amp;#123;	int sno;	char name[50];	int score;&amp;#125;;//main函数中的使用,C语言中一般还是必须的加入stru">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,60 +155,196 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-How-to-understand-struct-in-language-C" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/12/敏捷开发模式/" class="archive-article-date">
-  	<time datetime="2019-08-12T04:19:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/12/敏捷开发模式/">敏捷开发模式</a>
+    <h1 class="article-title" itemprop="name">
+      How to understand &#39;struct&#39; in language C
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/08/16/How-to-understand-struct-in-language-C/" class="archive-article-date">
+  	<time datetime="2019-08-16T14:24:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="C语言中所有的结构体定义方法"><a href="#C语言中所有的结构体定义方法" class="headerlink" title="C语言中所有的结构体定义方法"></a>C语言中所有的结构体定义方法</h2><pre><code>~~写的原因：数据结构，严奶奶的书，最近找工作复习。。发现里面的结构体定义看不太懂，因为**C++的结构体太好用了**！~~
+1. 第一种定义方法是先定义结构体再定义变量名
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">struct student&#123;</span><br><span class="line">	int sno;</span><br><span class="line">	char name[50];</span><br><span class="line">	int score;</span><br><span class="line">&#125;;</span><br><span class="line">//main函数中的使用,C语言中一般还是必须的加入struct的</span><br><span class="line">struct student mea;</span><br></pre></td></tr></table></figure>
+
+2. 第二种方法就是在定义结构体的时候就把变量名给定义了
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">	struct student&#123;</span><br><span class="line">	int sno;</span><br><span class="line">	char name[50];</span><br><span class="line">	int score;</span><br><span class="line">&#125;mea;</span><br><span class="line">这时候mea就作为一个变量就可以用了，神奇！</span><br></pre></td></tr></table></figure>
+
+3. 第三种方法就是直接定义变量名，而不要结构体的名字，但是一般人绝对不会这么搞得吧。。。
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">struct&#123;</span><br><span class="line">   int sno;</span><br><span class="line">   char name[50];</span><br><span class="line">   int score;</span><br><span class="line">&#125;mea;</span><br></pre></td></tr></table></figure>
+
+4. 第四种就是数据结构这本书上最常出现的情况了
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">typedef struct student&#123;</span><br><span class="line">	int sno;</span><br><span class="line">	char name[50];</span><br><span class="line">	int score;</span><br><span class="line">&#125;Mea,Aqua;</span><br><span class="line">//main函数中有三种定义方式</span><br><span class="line">Mea mea;</span><br><span class="line">Aqua mea;</span><br><span class="line">struct student mea;</span><br></pre></td></tr></table></figure>
+
+你要是把这个玩意横过来 其实就对应了typedef的使用方法了只是因为有花括号所以不需要空格了。</code></pre><hr>
+<h2 id="结构体的初始化。对应相应的类型"><a href="#结构体的初始化。对应相应的类型" class="headerlink" title="结构体的初始化。对应相应的类型"></a>结构体的初始化。对应相应的类型</h2><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">struct student&#123;</span><br><span class="line">	int sno;</span><br><span class="line">	char name[50];</span><br><span class="line">	int score;</span><br><span class="line">&#125;;</span><br><span class="line">int main()&#123;</span><br><span class="line">	struct student mea = &#123;101,&quot;mea_suki&quot;,95&#125;;</span><br><span class="line">	printf(&quot;%d %s,%d&quot;,mea.sno,mea.name,mea.score);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre><hr>
+<h2 id="结构体变量定应用："><a href="#结构体变量定应用：" class="headerlink" title="结构体变量定应用："></a>结构体变量定应用：</h2><pre><code>结构体中的成员可以像普通的变量那样单独的使用，如下面例子中，结构体变量A中的成员num，可以使用A.num</code></pre><hr>
+<h2 id="关于结构体的一点说明"><a href="#关于结构体的一点说明" class="headerlink" title="关于结构体的一点说明"></a>关于结构体的一点说明</h2><pre><code>1. 不能把结构体当成一个整体进行操作
+printf(&quot;%d,%s ,%d&quot;,mea);//对应上了？没听说过。。。
+scanf(&quot;%d, %s %d&quot;,&amp;mea);//也不行
+printf(&quot;%d, %s %d&quot;,mea.sno,mea.name,mea.score);//可以使用
+scanf(&quot;%d, %s %d&quot;,&amp;mea.sno,&amp;mea.name,&amp;mea.score);//可以使用
+
+2. 当结构域体变量的成员也是结构体类型时，引用必须用最底层的变量：如下
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">struct Age&#123;</span><br><span class="line">	int year;</span><br><span class="line">	int month;</span><br><span class="line">	int day;</span><br><span class="line">&#125;;</span><br><span class="line">struct student&#123;</span><br><span class="line">	int sno;</span><br><span class="line">	int score;</span><br><span class="line">	struct Age age;</span><br><span class="line">&#125;;</span><br><span class="line">int main()&#123;</span><br><span class="line">	struct student mea;</span><br><span class="line">	scanf(&quot;%d&quot;,&amp;mea.age.day);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+3. 程序中的变量名和成员名相同，二者代表不同对象
+4. 可以引用结构体变量成员地址，也可以引用结构体变量的地址
+scanf(&quot;%d&quot;,&amp;mea.sno)//输入A的num值
+printf(&quot;%d&quot;，&amp;mea)//输出mea的首地址
+5. 相同类型的变量可以相互赋值，其他情况不允许直接赋值
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">struct student mea;</span><br><span class="line">struct student auqa;</span><br><span class="line">mea = auqa;</span><br></pre></td></tr></table></figure></code></pre>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">开发</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">C语言;</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/16/How-to-understand-struct-in-language-C/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/08/12/How-to-find-a-job-what-s-the-most-important/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">How to find a job, what&#39;s the most important</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -226,9 +367,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
