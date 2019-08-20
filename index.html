@@ -223,8 +223,9 @@
 <h1 id="https-www-acwing-com-problem-content-91"><a href="#https-www-acwing-com-problem-content-91" class="headerlink" title="https://www.acwing.com/problem/content/91/"></a><a href="https://www.acwing.com/problem/content/91/" target="_blank" rel="noopener">https://www.acwing.com/problem/content/91/</a></h1><p>这是一个问a的b次方 模 p 的问题<br>由于数值比较大 计算时间也比较长 所以最好的方法就是用位运算来做</p>
 <p>这个是一个快速幂的模板题目：<br>快速幂的核心就是 a的b次方其实就是 把 b 拆分成2的所有幂次 然后再相乘；这样对于一个2的15次方的数最多也就是算15次，非常省时间<br>15 的 13 次方 = 15左移0位 * 15 左移2位 * 15左移 3 位的相乘</p>
 <p>所以说，位运算是对应了计算机本身的东西，比较适合计算机去做。</p>
-<p>快速幂模板<br>‘’’<br>import java.util.Scanner;<br>public class 快速幂 {<br>    public static long  fastmimi(long a, long b , long p){<br>         long ans = 1%p;<br>        while(b &gt; 0){<br>            long tmp = b &amp; 1;<br>            if(tmp == 1){<br>                ans = (long)ans<em>a%p;<br>            }<br>            a = (a</em>(long)a%p);<br>            b &gt;&gt;= 1;<br>        }<br>        return ans;<br>    }<br>    public static void main(String[] args) {<br>        Scanner in = new Scanner(System.in);<br>        long a = in.nextLong();<br>        long b = in.nextLong();<br>        long p = in.nextLong();<br>        long ans = fastmimi(a, b, p);<br>        System.out.println(ans);<br>    }</p>
-<p>}<br>‘’’</p>
+<p>快速幂模板</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import java.util.Scanner;</span><br><span class="line">public class 快速幂 &#123;</span><br><span class="line">	public static long  fastmimi(long a, long b , long p)&#123;</span><br><span class="line">		 long ans = 1%p;</span><br><span class="line">		while(b &gt; 0)&#123;</span><br><span class="line">			long tmp = b &amp; 1;</span><br><span class="line">			if(tmp == 1)&#123;</span><br><span class="line">				ans = (long)ans*a%p;</span><br><span class="line">			&#125;</span><br><span class="line">			a = (a*(long)a%p);</span><br><span class="line">			b &gt;&gt;= 1;</span><br><span class="line">		&#125;</span><br><span class="line">		return ans;</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Scanner in = new Scanner(System.in);</span><br><span class="line">		long a = in.nextLong();</span><br><span class="line">		long b = in.nextLong();</span><br><span class="line">		long p = in.nextLong();</span><br><span class="line">		long ans = fastmimi(a, b, p);</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h1 id="https-www-acwing-com-problem-content-description-92"><a href="#https-www-acwing-com-problem-content-description-92" class="headerlink" title="https://www.acwing.com/problem/content/description/92/"></a><a href="https://www.acwing.com/problem/content/description/92/" target="_blank" rel="noopener">https://www.acwing.com/problem/content/description/92/</a></h1><p>如何将其应用的乘法上面，记住比价重要的一点就是 对于a的处理上，一定记得乘法是加法的翻倍，幂次是乘法的翻倍<br>然后对于答案也是对于结果的相加<br>前面已经介绍过了</p>
 <hr>
@@ -927,19 +928,19 @@ printf(&quot;%d&quot;，&amp;mea)//输出mea的首地址
 
 
   
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-培训编程班" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/11/我的第一篇博客文章/">我的第一篇博客文章</a>
+      <a class="article-title" href="/2019/08/11/培训编程班/">培训班的培训</a>
     </h1>
   
 
         
-        <a href="/2019/08/11/我的第一篇博客文章/" class="archive-article-date">
+        <a href="/2019/08/11/培训编程班/" class="archive-article-date">
   	<time datetime="2019-08-11T12:59:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-11</time>
 </a>
         
@@ -947,10 +948,14 @@ printf(&quot;%d&quot;，&amp;mea)//输出mea的首地址
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##第一章</p>
-<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>##第二章<br>内容</p>
+        <h1 id="语言阶段的入门"><a href="#语言阶段的入门" class="headerlink" title="语言阶段的入门"></a>语言阶段的入门</h1><p>##JAVA基础语法：<br>OO的思想，集合，IO，异常，泛型，反射，多线程，函数式</p>
 <hr>
-
+<h2 id="web基础和工具的培训"><a href="#web基础和工具的培训" class="headerlink" title="web基础和工具的培训"></a>web基础和工具的培训</h2><p>前端基础<br>html/css/js 三件套<br>jquery ajax jsp cookie sesseion<br>http基础 http协议 （应用层）<br>servelet基础<br>Git svn管理技术</p>
+<hr>
+<h2 id="企业级的应用框架"><a href="#企业级的应用框架" class="headerlink" title="企业级的应用框架"></a>企业级的应用框架</h2><p>1.maven<br>2.spring/springmvc/springboot技术<br>3.关系型数据库Mysql/jdbc/Mybatis/hibernate<br>4.非关系型数据库Redis缓存</p>
+<h2 id="5-模板技术tyhmeleaf"><a href="#5-模板技术tyhmeleaf" class="headerlink" title="5.模板技术tyhmeleaf"></a>5.模板技术tyhmeleaf</h2><h2 id="高级应用框架培训"><a href="#高级应用框架培训" class="headerlink" title="高级应用框架培训"></a>高级应用框架培训</h2><p>1、搜索引擎 elastic search<br>2、RPC框架/微服务框架：Dubbo、Spring Cloud（比较总要的是spring Cloud）<br>3、中间件技术：RabbitMQ、RocketMQ、ActiveMQ、Kafka等</p>
+<h2 id="4、虚拟化技术：Docker容器"><a href="#4、虚拟化技术：Docker容器" class="headerlink" title="4、虚拟化技术：Docker容器"></a>4、虚拟化技术：Docker容器</h2><h2 id="高级话题："><a href="#高级话题：" class="headerlink" title="高级话题："></a>高级话题：</h2><p>jvm优化和排错<br>GC分析</p>
+<h2 id="数据库高级优化"><a href="#数据库高级优化" class="headerlink" title="数据库高级优化"></a>数据库高级优化</h2>
       
 
       
@@ -962,7 +967,7 @@ printf(&quot;%d&quot;，&amp;mea)//输出mea的首地址
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/11/我的第一篇博客文章/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/08/11/培训编程班/">展开全文 >></a>
         </p>
       
 
@@ -1089,6 +1094,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">C语言;</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">job;</a>
               </li>
              
@@ -1097,15 +1106,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">C语言;</a>
+                <a href="javascript:void(0)" class="js-tag color5">work</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">位运算</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">work</a>
               </li>
              
               <li class="article-tag-list-item">
