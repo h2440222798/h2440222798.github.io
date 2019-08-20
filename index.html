@@ -220,6 +220,14 @@
 <td></td>
 </tr>
 </tbody></table>
+<h1 id="https-www-acwing-com-problem-content-91"><a href="#https-www-acwing-com-problem-content-91" class="headerlink" title="https://www.acwing.com/problem/content/91/"></a><a href="https://www.acwing.com/problem/content/91/" target="_blank" rel="noopener">https://www.acwing.com/problem/content/91/</a></h1><p>这是一个问a的b次方 模 p 的问题<br>由于数值比较大 计算时间也比较长 所以最好的方法就是用位运算来做</p>
+<p>这个是一个快速幂的模板题目：<br>快速幂的核心就是 a的b次方其实就是 把 b 拆分成2的所有幂次 然后再相乘；这样对于一个2的15次方的数最多也就是算15次，非常省时间<br>15 的 13 次方 = 15左移0位 * 15 左移2位 * 15左移 3 位的相乘</p>
+<p>所以说，位运算是对应了计算机本身的东西，比较适合计算机去做。</p>
+<p>快速幂模板<br>‘’’<br>import java.util.Scanner;<br>public class 快速幂 {<br>    public static long  fastmimi(long a, long b , long p){<br>         long ans = 1%p;<br>        while(b &gt; 0){<br>            long tmp = b &amp; 1;<br>            if(tmp == 1){<br>                ans = (long)ans<em>a%p;<br>            }<br>            a = (a</em>(long)a%p);<br>            b &gt;&gt;= 1;<br>        }<br>        return ans;<br>    }<br>    public static void main(String[] args) {<br>        Scanner in = new Scanner(System.in);<br>        long a = in.nextLong();<br>        long b = in.nextLong();<br>        long p = in.nextLong();<br>        long ans = fastmimi(a, b, p);<br>        System.out.println(ans);<br>    }</p>
+<p>}<br>‘’’</p>
+<hr>
+<h1 id="https-www-acwing-com-problem-content-description-92"><a href="#https-www-acwing-com-problem-content-description-92" class="headerlink" title="https://www.acwing.com/problem/content/description/92/"></a><a href="https://www.acwing.com/problem/content/description/92/" target="_blank" rel="noopener">https://www.acwing.com/problem/content/description/92/</a></h1><p>如何将其应用的乘法上面，记住比价重要的一点就是 对于a的处理上，一定记得乘法是加法的翻倍，幂次是乘法的翻倍<br>然后对于答案也是对于结果的相加<br>前面已经介绍过了</p>
+<hr>
 
       
 
@@ -851,71 +859,6 @@ printf(&quot;%d&quot;，&amp;mea)//输出mea的首地址
 
 
   
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/11/我的第一篇博客文章/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/11/我的第一篇博客文章/" class="archive-article-date">
-  	<time datetime="2019-08-11T12:59:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##第一章</p>
-<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>##第二章<br>内容</p>
-<hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/11/我的第一篇博客文章/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-如何快速学习一门技术" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -955,6 +898,71 @@ printf(&quot;%d&quot;，&amp;mea)//输出mea的首地址
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/11/如何快速学习一门技术/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/11/我的第一篇博客文章/">我的第一篇博客文章</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/11/我的第一篇博客文章/" class="archive-article-date">
+  	<time datetime="2019-08-11T12:59:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##第一章</p>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>##第二章<br>内容</p>
+<hr>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/11/我的第一篇博客文章/">展开全文 >></a>
         </p>
       
 
@@ -1093,11 +1101,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">work</a>
+                <a href="javascript:void(0)" class="js-tag color4">位运算</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">位运算</a>
+                <a href="javascript:void(0)" class="js-tag color5">work</a>
               </li>
              
               <li class="article-tag-list-item">

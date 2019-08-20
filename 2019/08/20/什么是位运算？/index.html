@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="位运算不再神秘计算机中的乘法就是用到了位运算的知识！例如15*13就会把13拆解成8+4+1 的形式 也就是 2的0次方 2的2次方和 2的三次方分别对应了 15&amp;lt;&amp;lt;0 (15左移0位） + 15&amp;lt;&amp;lt;2 (15左移两位) + 15 &amp;lt;&amp;lt; 3 (15左移三位)的和这样对于计算机来说，处理起来绝对相当简单！ 计算的减法其实就是加法使用补码的方式进行运算，具体可以见计">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-20T07:00:51.336Z">
+<meta property="og:updated_time" content="2019-08-20T08:13:27.617Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="什么是位运算？">
 <meta name="twitter:description" content="位运算不再神秘计算机中的乘法就是用到了位运算的知识！例如15*13就会把13拆解成8+4+1 的形式 也就是 2的0次方 2的2次方和 2的三次方分别对应了 15&amp;lt;&amp;lt;0 (15左移0位） + 15&amp;lt;&amp;lt;2 (15左移两位) + 15 &amp;lt;&amp;lt; 3 (15左移三位)的和这样对于计算机来说，处理起来绝对相当简单！ 计算的减法其实就是加法使用补码的方式进行运算，具体可以见计">
@@ -223,6 +223,14 @@
 <td></td>
 </tr>
 </tbody></table>
+<h1 id="https-www-acwing-com-problem-content-91"><a href="#https-www-acwing-com-problem-content-91" class="headerlink" title="https://www.acwing.com/problem/content/91/"></a><a href="https://www.acwing.com/problem/content/91/" target="_blank" rel="noopener">https://www.acwing.com/problem/content/91/</a></h1><p>这是一个问a的b次方 模 p 的问题<br>由于数值比较大 计算时间也比较长 所以最好的方法就是用位运算来做</p>
+<p>这个是一个快速幂的模板题目：<br>快速幂的核心就是 a的b次方其实就是 把 b 拆分成2的所有幂次 然后再相乘；这样对于一个2的15次方的数最多也就是算15次，非常省时间<br>15 的 13 次方 = 15左移0位 * 15 左移2位 * 15左移 3 位的相乘</p>
+<p>所以说，位运算是对应了计算机本身的东西，比较适合计算机去做。</p>
+<p>快速幂模板<br>‘’’<br>import java.util.Scanner;<br>public class 快速幂 {<br>    public static long  fastmimi(long a, long b , long p){<br>         long ans = 1%p;<br>        while(b &gt; 0){<br>            long tmp = b &amp; 1;<br>            if(tmp == 1){<br>                ans = (long)ans<em>a%p;<br>            }<br>            a = (a</em>(long)a%p);<br>            b &gt;&gt;= 1;<br>        }<br>        return ans;<br>    }<br>    public static void main(String[] args) {<br>        Scanner in = new Scanner(System.in);<br>        long a = in.nextLong();<br>        long b = in.nextLong();<br>        long p = in.nextLong();<br>        long ans = fastmimi(a, b, p);<br>        System.out.println(ans);<br>    }</p>
+<p>}<br>‘’’</p>
+<hr>
+<h1 id="https-www-acwing-com-problem-content-description-92"><a href="#https-www-acwing-com-problem-content-description-92" class="headerlink" title="https://www.acwing.com/problem/content/description/92/"></a><a href="https://www.acwing.com/problem/content/description/92/" target="_blank" rel="noopener">https://www.acwing.com/problem/content/description/92/</a></h1><p>如何将其应用的乘法上面，记住比价重要的一点就是 对于a的处理上，一定记得乘法是加法的翻倍，幂次是乘法的翻倍<br>然后对于答案也是对于结果的相加<br>前面已经介绍过了</p>
+<hr>
 
       
 
@@ -467,11 +475,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">work</a>
+                <a href="javascript:void(0)" class="js-tag color4">位运算</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">位运算</a>
+                <a href="javascript:void(0)" class="js-tag color5">work</a>
               </li>
              
               <li class="article-tag-list-item">
